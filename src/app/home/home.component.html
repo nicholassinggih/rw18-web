@@ -1,10 +1,37 @@
-<div>
+<div class="property-search">
   <div>Search</div>
   <div>
-    <input type="text" pInputText [(ngModel)]="searchKeyword" />
+    <input type="text" (keyup.enter)="search(searchKeyword)" pInputText [(ngModel)]="searchKeyword" />
   </div>
   <div>
-    <button>Cari</button>
+    <p-button (click)="search(searchKeyword)">Cari</p-button>
   </div>
 </div>
 
+
+
+
+<p-table [value]="propertyList" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Nama</th>
+          <th>Blok</th>
+          <th>No</th>
+          <th>Nominal</th>
+          <th>RT</th>
+          <th>Penagih</th>
+          <th>Komersial</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-property>
+      <tr>
+          <td>{{ property.Pemilik?.nama }}</td>
+          <td>{{ property.blok }}</td>
+          <td>{{ property.no }}</td>
+          <td>{{ property.nominal }}</td>
+          <td>{{ property.rt }}</td>
+          <td>{{ property.Collector?.nama }}</td>
+          <td>{{ property.komersial? 'Ya' : 'Tidak' }}</td>
+      </tr>
+  </ng-template>
+</p-table>
