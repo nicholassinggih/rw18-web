@@ -13,7 +13,7 @@ export class PropertyService {
 
   searchProperty(keyword: string) {
     let url = `${environment.apiUrl}/property/search`;
-    // return this.http.post<any>(url, params);
+    return this.http.get<any>(url, {params: {keyword: keyword}});
   }
 
 }
