@@ -9,13 +9,15 @@ import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SharedModule } from './shared/shared.module';
+import { MetaComponent } from './meta/meta/meta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmptyRouteComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    MetaComponent
   ],
   imports: [
     BrowserModule,
