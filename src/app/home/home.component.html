@@ -1,15 +1,12 @@
 <div class="property-search">
   <div>Search</div>
   <div>
-    <input type="text" (keyup.enter)="search(searchKeyword)" pInputText [(ngModel)]="searchKeyword" />
+    <input type="text" (keyup.enter)="search(searchKeyword, 0, pageSize)" pInputText [(ngModel)]="searchKeyword" />
   </div>
   <div>
-    <p-button (click)="search(searchKeyword)">Cari</p-button>
+    <p-button (click)="search(searchKeyword, 0, pageSize)">Cari</p-button>
   </div>
 </div>
-
-
-
 
 <p-table [value]="propertyList" [tableStyle]="{ 'min-width': '50rem' }">
   <ng-template pTemplate="header">
@@ -35,3 +32,10 @@
       </tr>
   </ng-template>
 </p-table>
+
+
+<p-paginator (onPageChange)="pageEvent($event)"
+  [first]="offset"
+  [rows]="pageSize"
+  [totalRecords]="totalRecords"
+  [rowsPerPageOptions]="[10, 25, 50, 100]"></p-paginator>
