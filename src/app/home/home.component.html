@@ -1,5 +1,4 @@
 <div class="property-search">
-  <div>Search</div>
   <div>
     <input type="text" (keyup.enter)="search(searchKeyword, 0, pageSize)" pInputText [(ngModel)]="searchKeyword" />
   </div>
@@ -31,6 +30,11 @@
           <td>{{ property.komersial? 'Ya' : 'Tidak' }}</td>
       </tr>
   </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+        <td colspan="7" class="justify-center">No data found</td>
+    </tr>
+</ng-template>
 </p-table>
 
 
