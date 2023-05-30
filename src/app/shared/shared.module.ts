@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { PaginatorModule } from 'primeng/paginator';
 import { TableModule } from 'primeng/table';
 import { PropertyService } from './services/property.service';
 
@@ -13,7 +14,8 @@ import { PropertyService } from './services/property.service';
     ButtonModule,
     InputTextModule,
     TableModule,
-    FormsModule
+    FormsModule,
+    PaginatorModule
   ],
   providers: [
     PropertyService
@@ -22,7 +24,8 @@ import { PropertyService } from './services/property.service';
     FormsModule,
     InputTextModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    PaginatorModule
   ]
 })
 export class SharedModule { }

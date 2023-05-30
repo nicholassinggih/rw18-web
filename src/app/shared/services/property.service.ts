@@ -11,9 +11,9 @@ export class PropertyService {
     private http: HttpClient
   ) { }
 
-  searchProperty(keyword: string) {
+  searchProperty(keyword: string, offset: number, pageSize: number) {
     let url = `${environment.apiUrl}/property/search`;
-    return this.http.get<any>(url, {params: {keyword: keyword}});
+    return this.http.get<any>(url, {params: {keyword: keyword, offset: offset, limit: pageSize}});
   }
 
 }
