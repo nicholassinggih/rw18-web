@@ -1,0 +1,10 @@
+<div>
+  <textarea [(ngModel)]="words" name="" id="" cols="30" rows="10"></textarea>
+  <button (click)="generate()">Go</button>
+</div>
+
+<div>
+  <ul *ngFor="let item of results">
+    <li>{{item}}</li>
+  </ul>
+</div>
