@@ -12,10 +12,10 @@ export class HomeComponent implements OnInit {
   totalRecords: number = 0;
   pageSize: number = 10;
   offset: number = 0;
-
   constructor(private propSvc: PropertyService) { }
 
   ngOnInit(): void {
+    this.search(this.searchKeyword, this.offset, this.pageSize);
   }
 
   search(keyword: string, offset: number, limit: number, event: any = null): void{
