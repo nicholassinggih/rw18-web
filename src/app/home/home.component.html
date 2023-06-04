@@ -17,6 +17,7 @@
           <th>RT</th>
           <th>Penagih</th>
           <th>Komersial</th>
+          <th></th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-property>
@@ -28,6 +29,10 @@
           <td>{{ property.rt }}</td>
           <td>{{ property.Collector?.nama }}</td>
           <td>{{ property.komersial? 'Ya' : 'Tidak' }}</td>
+          <td>
+            <p-button icon="pi pi-info-circle" styleClass="p-button-rounded p-button-help"></p-button>
+            <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-danger"></p-button>
+          </td>
       </tr>
   </ng-template>
   <ng-template pTemplate="emptymessage">
