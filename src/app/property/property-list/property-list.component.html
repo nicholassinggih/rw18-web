@@ -1,0 +1,50 @@
+<div class="property-search">
+  <div>
+    <input type="text" (keyup.enter)="search(searchKeyword, 0, pageSize)" pInputText [(ngModel)]="searchKeyword" />
+  </div>
+  <div>
+    <p-button (click)="search(searchKeyword, 0, pageSize)">Cari</p-button>
+  </div>
+</div>
+
+<p-table [value]="propertyList" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Nama</th>
+          <th>Blok</th>
+          <th>No</th>
+          <th>Nominal</th>
+          <th>RT</th>
+          <th>Penagih</th>
+          <th>Komersial</th>
+          <th></th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-property>
+      <tr>
+          <td>{{ property.Pemilik?.nama }}</td>
+          <td>{{ property.blok }}</td>
+          <td>{{ property.no }}</td>
+          <td>{{ property.nominal }}</td>
+          <td>{{ property.rt }}</td>
+          <td>{{ property.Collector?.nama }}</td>
+          <td>{{ property.komersial? 'Ya' : 'Tidak' }}</td>
+          <td>
+            <p-button icon="pi pi-info-circle" styleClass="p-button-rounded p-button-help"></p-button>
+            <p-button icon="pi pi-pencil" (onClick)="editProperty(property.id)" styleClass="p-button-rounded p-button-danger"></p-button>
+          </td>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+        <td colspan="7" class="justify-center">No data found</td>
+    </tr>
+</ng-template>
+</p-table>
+
+
+<p-paginator (onPageChange)="pageEvent($event)"
+  [first]="offset"
+  [rows]="pageSize"
+  [totalRecords]="totalRecords"
+  [rowsPerPageOptions]="[10, 25, 50, 100]"></p-paginator>
