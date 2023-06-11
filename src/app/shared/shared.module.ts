@@ -5,10 +5,13 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
 import { TableModule } from 'primeng/table';
+import { ContainerComponent } from './container/container.component';
 import { PropertyService } from './services/property.service';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ContainerComponent
+  ],
   imports: [
     CommonModule,
     ButtonModule,

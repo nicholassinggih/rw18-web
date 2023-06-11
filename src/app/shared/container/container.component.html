@@ -1,0 +1,14 @@
+<router-outlet></router-outlet>
+<mbb-dialog
+  class="mfe-cnr-bulk-collection-dialog"
+	#dialog
+	[title]="dialogTitle | translate"
+  [description]="dialogText | translate"
+	ignoreOverlay
+	[buttonPayload]="dialogButtons || [{
+    label: 'OK',
+    value: true,
+    type: 'filled'
+  }]"
+  >
+</mbb-dialog>
