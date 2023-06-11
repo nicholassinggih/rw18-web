@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PropertyService } from 'src/app/shared/services/property.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class PropertyListComponent {
   totalRecords: number = 0;
   pageSize: number = 10;
   offset: number = 0;
-  constructor(private propSvc: PropertyService) { }
+  constructor(private propSvc: PropertyService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.search(this.searchKeyword, this.offset, this.pageSize);
@@ -38,4 +40,10 @@ export class PropertyListComponent {
   editProperty(id: number) {
 
   }
+
+
+  viewDetail(id: number) {
+    this.router.navigate([`/property`, id]);
+  }
+
 }
