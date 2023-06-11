@@ -11,6 +11,7 @@ import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { HomeComponent } from './home/home.component';
 import { MetaComponent } from './meta/meta/meta.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PropertyModule } from './property/property.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -19,7 +20,7 @@ import { SharedModule } from './shared/shared.module';
     EmptyRouteComponent,
     PageNotFoundComponent,
     HomeComponent,
-    MetaComponent
+    MetaComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    PropertyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
