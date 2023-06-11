@@ -12,6 +12,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'property',
+    loadChildren: () => import('./property/property.module').then(m => m.PropertyModule),
+  },
+  {
     path: 'meta',
     component: MetaComponent
   },
