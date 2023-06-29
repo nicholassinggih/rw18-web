@@ -33,4 +33,8 @@ export class HomeComponent implements OnInit {
     console.log(event);
     this.search(this.searchKeyword, event.first, event.rows);
   }
+
+  editProperty(id: number) {
+
+  }
 }

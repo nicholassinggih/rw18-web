@@ -31,7 +31,7 @@
           <td>{{ property.komersial? 'Ya' : 'Tidak' }}</td>
           <td>
             <p-button icon="pi pi-info-circle" styleClass="p-button-rounded p-button-help"></p-button>
-            <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-danger"></p-button>
+            <p-button icon="pi pi-pencil" (onClick)="editProperty(property.id)" styleClass="p-button-rounded p-button-danger"></p-button>
           </td>
       </tr>
   </ng-template>
