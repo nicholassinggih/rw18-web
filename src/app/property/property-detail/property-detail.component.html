@@ -1,8 +1,10 @@
+<h3>Property Details</h3>
+<p-button label="Back" icon="pi pi-arrow-left" (onClick)="goBack()"></p-button>
 <div>
-  <app-text-field title="Pemilik" [(value)]="pemilik"></app-text-field>
-  <app-text-field title="Blok" [(value)]="blok"></app-text-field>
-  <app-text-field title="No" [(value)]="no"></app-text-field>
-  <app-text-field title="RT" [(value)]="rt"></app-text-field>
-  <app-text-field title="Penagih" [(value)]="collector"></app-text-field>
+  <app-text-field [disabled]="!editMode" title="Pemilik" [(value)]="pemilik"></app-text-field>
+  <app-text-field [disabled]="!editMode" title="Blok" [(value)]="blok"></app-text-field>
+  <app-text-field [disabled]="!editMode" title="No" [(value)]="no"></app-text-field>
+  <app-text-field [disabled]="!editMode" title="RT" [(value)]="rt"></app-text-field>
+  <app-text-field [disabled]="!editMode" title="Penagih" [(value)]="collector"></app-text-field>
   <!-- <app-text-field title="Komersial" [(value)]="komersial"></app-text-field> -->
 </div>

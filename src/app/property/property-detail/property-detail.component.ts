@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PropertyService } from 'src/app/shared/services/property.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { PropertyService } from 'src/app/shared/services/property.service';
 export class PropertyDetailComponent implements OnInit {
   propertyId: string | null = null;
   detail: any;
+  editMode: boolean = false;
 
   get pemilik(): string{
     return this.detail?.Pemilik?.nama;
@@ -69,7 +70,8 @@ export class PropertyDetailComponent implements OnInit {
 
   constructor(
     private propertyService: PropertyService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -84,5 +86,9 @@ export class PropertyDetailComponent implements OnInit {
 
     })
 
+  }
+
+  goBack(): void {
+    this.router.navigate(['property']);
   }
 }
