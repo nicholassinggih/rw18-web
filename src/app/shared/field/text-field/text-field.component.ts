@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./text-field.component.scss']
 })
 export class TextFieldComponent {
+  @Input() disabled: boolean = false;
   @Input() title: string;
   @Input() value: any;
   @Output() valueChange: EventEmitter<any> = new EventEmitter<any>();
