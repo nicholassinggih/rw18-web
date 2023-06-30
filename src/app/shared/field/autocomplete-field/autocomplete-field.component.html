@@ -1,0 +1,3 @@
+<app-base-field [title]="title">
+  <p-autoComplete [(ngModel)]="selectedItem" [suggestions]="suggestions" (completeMethod)="search($event)"></p-autoComplete>
+</app-base-field>
