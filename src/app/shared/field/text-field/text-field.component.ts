@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-text-field',
@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TextFieldComponent {
   @Input() title: string;
-  value: string;
+  @Input() value: any;
+  @Output() valueChange: EventEmitter<any> = new EventEmitter<any>();
 }
