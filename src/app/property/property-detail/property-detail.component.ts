@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Collector } from 'src/app/entities/collector.model';
+import { Pemilik } from 'src/app/entities/pemilik.model';
+import { Property } from 'src/app/entities/property.model';
 import { PropertyService } from 'src/app/shared/services/property.service';
 
 @Component({
@@ -9,64 +12,8 @@ import { PropertyService } from 'src/app/shared/services/property.service';
 })
 export class PropertyDetailComponent implements OnInit {
   propertyId: string | null = null;
-  detail: any;
+  detail: Property = <Property>{ Pemilik: <Pemilik>{}, Collector: <Collector>{}};
   editMode: boolean = false;
-
-  get pemilik(): string{
-    return this.detail?.Pemilik?.nama;
-  }
-
-  set pemilik(value: string) {
-    if (!this.detail?.Pemilik) return;
-    this.detail.Pemilik.nama = value;
-  }
-
-  get blok(): string {
-    return this.detail?.blok;
-  }
-
-  set blok(value: string) {
-    if (!this.detail) return;
-    this.detail.blok = value;
-  }
-
-  get no(): string {
-    return this.detail?.no;
-  }
-
-  set no(value: string) {
-    if (!this.detail) return;
-    this.detail.no = value;
-  }
-
-  get rt(): string {
-    return this.detail?.rt;
-  }
-
-  set rt(value: string) {
-    if (!this.detail) return;
-    this.detail.rt = value;
-  }
-
-  get collector(): string {
-    return this.detail?.Collector?.nama;
-  }
-
-  set collector(value: string) {
-    if (!this.detail?.Collector) return;
-    this.detail.Collector.nama = value;
-  }
-
-  get commercial(): string {
-    return this.detail?.komersial;
-  }
-
-  set commercial(value: string) {
-    if (!this.detail?.komersial) return;
-    this.detail.komersial.nama = value;
-  }
-
-
 
   constructor(
     private propertyService: PropertyService,
@@ -90,5 +37,13 @@ export class PropertyDetailComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate(['property']);
+  }
+
+  enableEdit(): void {
+    this.editMode = true;
+  }
+
+  save(): void {
+
   }
 }
