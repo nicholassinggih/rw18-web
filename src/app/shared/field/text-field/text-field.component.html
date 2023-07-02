@@ -1,5 +1,4 @@
-<div>
-  <h5>{{ title }}</h5>
+<app-base-field [title]="title">
   <input type="text" [(ngModel)]="value" pInputText
     [disabled]="disabled"/>
-</div>
+</app-base-field>

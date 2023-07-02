@@ -1,13 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { BaseFieldComponent } from '../base-field/base-field.component';
 
 @Component({
   selector: 'app-text-field',
   templateUrl: './text-field.component.html',
   styleUrls: ['./text-field.component.scss']
 })
-export class TextFieldComponent {
-  @Input() disabled: boolean = false;
-  @Input() title: string;
-  @Input() value: any;
-  @Output() valueChange: EventEmitter<any> = new EventEmitter<any>();
+export class TextFieldComponent extends BaseFieldComponent {
+
 }
