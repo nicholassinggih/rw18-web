@@ -41,5 +41,6 @@ import { PropertyService } from './services/property.service';
     RouterModule,
     TextFieldComponent,
     AutocompleteFieldComponent,
+  ]
 })
 export class SharedModule { }
