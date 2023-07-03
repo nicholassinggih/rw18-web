@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BaseFieldComponent } from '../base-field/base-field.component';
 
 interface AutoCompleteCompleteEvent {
@@ -17,9 +17,10 @@ export class AutocompleteFieldComponent extends BaseFieldComponent {
 
   selectedItem: any;
 
-  suggestions: any[] | undefined;
+  @Input() suggestions: any[] | undefined;
+  @Output() completeMethod: EventEmitter<AutoCompleteCompleteEvent> = new EventEmitter<AutoCompleteCompleteEvent>();
 
-  search(event: AutoCompleteCompleteEvent) {
-      this.suggestions = [...Array(10).keys()].map(item => event.query + '-' + item);
+  onComplete(event: AutoCompleteCompleteEvent) {
+    this.completeMethod.emit(event);
   }
 }
