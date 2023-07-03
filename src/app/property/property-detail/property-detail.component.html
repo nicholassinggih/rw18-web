@@ -5,10 +5,16 @@
 <p-button label="Save" icon="pi pi-save" (onClick)="save()"
   [disabled]="!editMode" *ngIf="editMode"></p-button>
 <div>
-  <app-autocomplete-field [disabled]="!editMode" title="Pemilik" [(value)]="detail.Pemilik.nama"></app-autocomplete-field>
+  <app-autocomplete-field [disabled]="!editMode"
+    [suggestions]="listPemilik"
+    (completeMethod)="searchPemilik($event)"
+    title="Pemilik" [(value)]="detail.Pemilik.nama"></app-autocomplete-field>
   <app-text-field [disabled]="!editMode" title="Blok" [(value)]="detail.blok"></app-text-field>
   <app-text-field [disabled]="!editMode" title="No" [(value)]="detail.no"></app-text-field>
   <app-text-field [disabled]="!editMode" title="RT" [(value)]="detail.rt"></app-text-field>
-  <app-autocomplete-field [disabled]="!editMode" title="Penagih" [(value)]="detail.Collector.nama"></app-autocomplete-field>
+  <app-autocomplete-field [disabled]="!editMode"
+    [suggestions]="listPenagih"
+    (completeMethod)="searchPenagih($event)"
+    title="Penagih" [(value)]="detail.Collector.nama"></app-autocomplete-field>
   <!-- <app-text-field title="Komersial" [(value)]="komersial"></app-text-field> -->
 </div>

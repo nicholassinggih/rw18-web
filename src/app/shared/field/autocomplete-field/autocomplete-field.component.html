@@ -2,5 +2,5 @@
   <p-autoComplete
     [forceSelection]="forceSelection"
     [disabled]="disabled"
-    [(ngModel)]="value" [suggestions]="suggestions" (completeMethod)="search($event)"></p-autoComplete>
+    [(ngModel)]="value" [suggestions]="suggestions" (completeMethod)="onComplete($event)"></p-autoComplete>
 </app-base-field>

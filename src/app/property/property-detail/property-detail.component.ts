@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { Collector } from 'src/app/entities/collector.model';
 import { Pemilik } from 'src/app/entities/pemilik.model';
 import { Property } from 'src/app/entities/property.model';
@@ -14,6 +15,9 @@ export class PropertyDetailComponent implements OnInit {
   propertyId: string | null = null;
   detail: Property = <Property>{ Pemilik: <Pemilik>{}, Collector: <Collector>{}};
   editMode: boolean = false;
+  listPemilik: any[] | undefined;
+  listPenagih: any[] | undefined;
+
 
   constructor(
     private propertyService: PropertyService,
@@ -45,5 +49,13 @@ export class PropertyDetailComponent implements OnInit {
 
   save(): void {
 
+  }
+
+  searchPemilik(event: AutoCompleteCompleteEvent) {
+    this.listPemilik = [...Array(10).keys()].map(item => event.query + '-' + item);
+  }
+
+  searchPenagih(event: AutoCompleteCompleteEvent) {
+    this.listPenagih = [...Array(10).keys()].map(item => event.query + '-' + item);
   }
 }
