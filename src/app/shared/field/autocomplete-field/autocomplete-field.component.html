@@ -1,4 +1,5 @@
 <app-base-field [title]="title">
   <p-autoComplete
+    [disabled]="disabled"
     [(ngModel)]="value" [suggestions]="suggestions" (completeMethod)="search($event)"></p-autoComplete>
 </app-base-field>
