@@ -41,8 +41,8 @@ export class PropertyListComponent {
 
   }
 
-  seeBills(id: number) {
-    this.router.navigate([`/property/bills`, id]);
+  seeBills(id: number, pemilikId: number) {
+    this.router.navigate([`/property/bills`, id], { queryParams: {pemilikId: pemilikId}});
   }
 
   viewDetail(id: number) {
