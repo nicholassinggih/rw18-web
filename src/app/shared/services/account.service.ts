@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { PaidFilter } from 'src/app/property/property-bill/property-bill.component';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -29,10 +30,17 @@ export class AccountService {
   }
 
 
-  getBills(accountId: number, unpaidOnly: boolean): Observable<any> {
+  getBills(accountId: number, paidFilter: PaidFilter): Observable<any> {
+    let billPaid = undefined;
+    switch(paidFilter) {
+      case PaidFilter.PAID: billPaid = 1; break;
+      case PaidFilter.UNPAID: billPaid = 0; break;
+    }
+
     let url = `${environment.apiUrl}/bill/search`;
     return this.http.get<any>(url, {params: {
       accountId: accountId || '',
+      paid: billPaid
     }});
   }
 

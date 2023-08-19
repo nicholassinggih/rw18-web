@@ -1,9 +1,21 @@
 <h3>Account Bills</h3>
 <p-button label="Back" icon="pi pi-arrow-left" (onClick)="goBack()"></p-button>
 
-<div>
-  Balance: {{ account?.balance }}
+<div class="accountDetail">
+  <div>Address</div>
+  <div>{{ account?.Property.blok }} No {{ account?.Property.no }}</div>
+  <div>Owner</div>
+  <div>{{ account?.Pemilik.nama }}</div>
+  <div>Balance</div>
+  <div>{{ account?.balance }}</div>
 </div>
+
+<p-selectButton
+  (onChange)="getBills()"
+  [options]="paidFilterOptions"
+  [(ngModel)]="paidFilter"
+  optionLabel="name"
+  optionValue="value"></p-selectButton>
 
 <p-table [value]="billList" [tableStyle]="{ 'min-width': '50rem' }">
   <ng-template pTemplate="header">
@@ -13,7 +25,6 @@
           <th>Amount</th>
           <th>Paid</th>
           <th>
-            <!-- <p-toggleButton [(ngModel)]="unpaidOnly" onLabel="Yes" offLabel="No"></p-toggleButton> -->
           </th>
       </tr>
   </ng-template>

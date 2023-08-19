@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Account } from 'src/app/entities/account.model';
 import { AccountService } from 'src/app/shared/services/account.service';
-import { PropertyService } from 'src/app/shared/services/property.service';
+
+export enum PaidFilter {
+  ALL,
+  PAID,
+  UNPAID
+}
 
 @Component({
   selector: 'app-property-bill',
@@ -13,12 +18,17 @@ export class PropertyBillComponent implements OnInit {
   propertyId: string | null = null;
   pemilikId: string | null = null;
   billList: Array<any> = [];
-  unpaidOnly: boolean = true;
+  paidFilterOptions: any[] = [
+    { name: 'All', value: PaidFilter.ALL },
+    { name: 'Paid', value: PaidFilter.PAID },
+    { name: 'Unpaid', value: PaidFilter.UNPAID }
+  ];
+  paidFilter: any = this.paidFilterOptions[0].value;
+
   account: Account = null;
 
   constructor(
     private accountService: AccountService,
-    private propertyService: PropertyService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) { }
@@ -37,7 +47,7 @@ export class PropertyBillComponent implements OnInit {
     });
   }
   getBills(): void {
-    this.accountService.getBills(this.account.id, this.unpaidOnly).subscribe(res => {
+    this.accountService.getBills(this.account.id, this.paidFilter).subscribe(res => {
       this.billList = res.rows;
     })
   }

@@ -6,7 +6,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
+import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ContainerComponent } from './container/container.component';
 import { AutocompleteFieldComponent } from './field/autocomplete-field/autocomplete-field.component';
 import { BaseFieldComponent } from './field/base-field/base-field.component';
@@ -25,6 +27,8 @@ import { PropertyService } from './services/property.service';
     ButtonModule,
     InputTextModule,
     AutoCompleteModule,
+    ToggleButtonModule,
+    SelectButtonModule,
     TableModule,
     FormsModule,
     PaginatorModule,
@@ -37,6 +41,8 @@ import { PropertyService } from './services/property.service';
   exports: [
     FormsModule,
     InputTextModule,
+    ToggleButtonModule,
+    SelectButtonModule,
     TableModule,
     ButtonModule,
     PaginatorModule,
