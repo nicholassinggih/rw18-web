@@ -1,6 +1,10 @@
 <h3>Account Bills</h3>
 <p-button label="Back" icon="pi pi-arrow-left" (onClick)="goBack()"></p-button>
 
+<div>
+  Balance: {{ account?.balance }}
+</div>
+
 <p-table [value]="billList" [tableStyle]="{ 'min-width': '50rem' }">
   <ng-template pTemplate="header">
       <tr>
@@ -8,7 +12,9 @@
           <th>Date</th>
           <th>Amount</th>
           <th>Paid</th>
-          <th></th>
+          <th>
+            <!-- <p-toggleButton [(ngModel)]="unpaidOnly" onLabel="Yes" offLabel="No"></p-toggleButton> -->
+          </th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-bill>
@@ -16,7 +22,9 @@
           <td>{{ bill.id }}</td>
           <td>{{ bill.billDate }}</td>
           <td>{{ bill.amount }}</td>
-          <td>{{ bill.paid }}</td>
+          <td>
+            {{ bill.paid }}
+          </td>
           <td>
           </td>
       </tr>
