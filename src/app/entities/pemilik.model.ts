@@ -1,4 +1,4 @@
 export class Pemilik {
-  id: number = 0;
+  id: number;
   nama: string = '';
 }
