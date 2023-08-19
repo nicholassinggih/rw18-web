@@ -11,6 +11,7 @@ import { ContainerComponent } from './container/container.component';
 import { AutocompleteFieldComponent } from './field/autocomplete-field/autocomplete-field.component';
 import { BaseFieldComponent } from './field/base-field/base-field.component';
 import { TextFieldComponent } from './field/text-field/text-field.component';
+import { AccountService } from './services/account.service';
 import { PropertyService } from './services/property.service';
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PropertyService } from './services/property.service';
     RouterModule
   ],
   providers: [
+    AccountService,
     PropertyService
   ],
   exports: [
