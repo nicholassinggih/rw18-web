@@ -22,9 +22,4 @@ export class PropertyService {
     return this.http.get<any>(url, {params: {id: id || ''}});
   }
 
-  getBills(id: string | null, pemilikId: string | null): Observable<any> {
-    let url = `${environment.apiUrl}/property/bills`;
-    return this.http.get<any>(url, {params: {id: id || '', pemilikId: pemilikId || ''}});
-  }
-
 }
