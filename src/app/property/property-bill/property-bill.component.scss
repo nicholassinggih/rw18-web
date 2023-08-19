@@ -1,0 +1,8 @@
+.accountDetail {
+  display: grid;
+  grid-template-columns: 100px auto;
+
+  div:nth-child(2n + 1) {
+    font-weight: 600;
+  }
+}

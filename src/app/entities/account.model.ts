@@ -1,3 +1,4 @@
+import { Pemilik } from './pemilik.model';
 import { Property } from './property.model';
 
 export class Account {
@@ -7,4 +8,5 @@ export class Account {
   balance: number;
   active: boolean;
   Property: Property;
+  Pemilik: Pemilik;
 }
