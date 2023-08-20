@@ -1,5 +1,5 @@
 
-export class Property {
+export class Payment {
   id: number = 0;
   amount: number;
   accountId: number;
