@@ -1,0 +1,26 @@
+<div class="form-container">
+  <h2>Payments</h2>
+  <form [formGroup]="form">
+    <label for="accountId">Account:</label>
+    <p-inputNumber formControlName="accountId"
+      [useGrouping]="false"
+      inputId="accountId" mode="decimal"> </p-inputNumber>
+
+    <label for="amount">Amount:</label>
+    <p-inputNumber formControlName="amount" inputId="amount" mode="decimal"[minFractionDigits]="2" [maxFractionDigits]="2"> </p-inputNumber>
+
+    <label for="fromName">From:</label>
+    <input pInputText id="fromName" type="fromName" formControlName="fromName" />
+
+    <label for="fromBank">From Bank:</label>
+    <input pInputText id="fromBank" type="fromBank" formControlName="fromBank" />
+
+    <label for="fromAccountNo">From Account #:</label>
+    <input pInputText id="fromAccountNo" type="fromAccountNo" formControlName="fromAccountNo" />
+
+    <label for="notes">Notes:</label>
+    <textarea rows="5" cols="30" pInputTextarea formControlName="notes"></textarea>
+
+    <button pButton type="button" label="Submit" (click)="submitForm()"></button>
+  </form>
+</div>
