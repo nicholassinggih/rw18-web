@@ -7,19 +7,21 @@
       inputId="accountId" mode="decimal"> </p-inputNumber>
 
     <label for="amount">Amount:</label>
-    <p-inputNumber formControlName="amount" inputId="amount" mode="decimal"[minFractionDigits]="2" [maxFractionDigits]="2"> </p-inputNumber>
+    <p-inputNumber formControlName="amount" inputId="amount" mode="decimal"
+      [max]="9999999999"
+      [maxFractionDigits]="0"> </p-inputNumber>
 
     <label for="fromName">From:</label>
-    <input pInputText id="fromName" type="fromName" formControlName="fromName" />
+    <input pInputText id="fromName" type="fromName" formControlName="fromName" maxlength="200" />
 
     <label for="fromBank">From Bank:</label>
-    <input pInputText id="fromBank" type="fromBank" formControlName="fromBank" />
+    <input pInputText id="fromBank" type="fromBank" formControlName="fromBank" maxlength="200" />
 
     <label for="fromAccountNo">From Account #:</label>
-    <input pInputText id="fromAccountNo" type="fromAccountNo" formControlName="fromAccountNo" />
+    <input pInputText id="fromAccountNo" type="fromAccountNo" formControlName="fromAccountNo" maxlength="120"/>
 
     <label for="notes">Notes:</label>
-    <textarea rows="5" cols="30" pInputTextarea formControlName="notes"></textarea>
+    <textarea rows="5" cols="30" pInputTextarea formControlName="notes" maxlength="250"></textarea>
 
     <button pButton type="button" label="Submit" (click)="submitForm()"></button>
   </form>

@@ -29,7 +29,7 @@ export class AddPaymentComponent {
       amount: 0,
       fromName: '',
       fromBank: '',
-      fromAccount: '',
+      fromAccountNo: '',
       notes: '',
     });
   }
