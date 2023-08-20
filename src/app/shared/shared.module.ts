@@ -2,14 +2,17 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MessageModule } from 'primeng/message';
 import { PaginatorModule } from 'primeng/paginator';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ContainerComponent } from './container/container.component';
 import { AutocompleteFieldComponent } from './field/autocomplete-field/autocomplete-field.component';
@@ -18,6 +21,7 @@ import { TextFieldComponent } from './field/text-field/text-field.component';
 import { AccountService } from './services/account.service';
 import { PaymentService } from './services/payment.service';
 import { PropertyService } from './services/property.service';
+
 
 @NgModule({
   declarations: [
@@ -33,24 +37,28 @@ import { PropertyService } from './services/property.service';
     InputNumberModule,
     InputTextareaModule,
     AutoCompleteModule,
+    MessageModule,
     ToggleButtonModule,
     SelectButtonModule,
     TableModule,
     FormsModule,
     PaginatorModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule,
   ],
   providers: [
     AccountService,
     PropertyService,
-    PaymentService
+    PaymentService,
+    MessageService
   ],
   exports: [
     FormsModule,
     InputTextModule,
     InputNumberModule,
     InputTextareaModule,
+    MessageModule,
     ToggleButtonModule,
     SelectButtonModule,
     TableModule,
@@ -59,6 +67,7 @@ import { PropertyService } from './services/property.service';
     RouterModule,
     TextFieldComponent,
     AutocompleteFieldComponent,
+    ToastModule,
     ReactiveFormsModule
 
   ]
