@@ -1,5 +1,7 @@
 <div class="form-container">
   <h2>Payments</h2>
+  <p-button label="Back" icon="pi pi-arrow-left" (onClick)="goBack()"></p-button>
+
   <form [formGroup]="form">
     <label for="accountId">Account:</label>
     <p-inputNumber formControlName="accountId"

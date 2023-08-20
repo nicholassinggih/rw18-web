@@ -10,8 +10,8 @@ import { AccountService } from 'src/app/shared/services/account.service';
   styleUrls: ['./add-payment.component.scss']
 })
 export class AddPaymentComponent {
-  propertyId: string | null = null;
-  pemilikId: string | null = null;
+  propertyId: number;
+  pemilikId: number;
   accountId: string;
   account: Account = null;
   form: FormGroup;
@@ -46,6 +46,9 @@ export class AddPaymentComponent {
   getAccount(): void {
     this.accountService.getById(this.accountId).subscribe(res => {
       this.account = res[0];
+      this.propertyId = this.account.propertyId;
+      this.pemilikId = this.account.pemilikId;
+
     });
   }
 
