@@ -34,8 +34,8 @@ export class PropertyBillComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.propertyId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.pemilikId = this.activatedRoute.snapshot.queryParamMap.get('pemilikId');
+    this.propertyId = this.activatedRoute.snapshot.paramMap.get('propertyId');
+    this.pemilikId = this.activatedRoute.snapshot.paramMap.get('pemilikId');
     this.getAccount();
   }
 
@@ -55,4 +55,9 @@ export class PropertyBillComponent implements OnInit {
   goBack(): void {
     this.router.navigate(['property']);
   }
+
+  addPayment(): void {
+    this.router.navigate(['/property', 'pay', this.account.id]);
+  }
+
 }
