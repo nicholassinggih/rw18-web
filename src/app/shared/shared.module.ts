@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PaginatorModule } from 'primeng/paginator';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TableModule } from 'primeng/table';
@@ -15,6 +17,7 @@ import { BaseFieldComponent } from './field/base-field/base-field.component';
 import { TextFieldComponent } from './field/text-field/text-field.component';
 import { AccountService } from './services/account.service';
 import { PropertyService } from './services/property.service';
+
 @NgModule({
   declarations: [
     ContainerComponent,
@@ -26,13 +29,16 @@ import { PropertyService } from './services/property.service';
     CommonModule,
     ButtonModule,
     InputTextModule,
+    InputNumberModule,
+    InputTextareaModule,
     AutoCompleteModule,
     ToggleButtonModule,
     SelectButtonModule,
     TableModule,
     FormsModule,
     PaginatorModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [
     AccountService,
@@ -41,6 +47,8 @@ import { PropertyService } from './services/property.service';
   exports: [
     FormsModule,
     InputTextModule,
+    InputNumberModule,
+    InputTextareaModule,
     ToggleButtonModule,
     SelectButtonModule,
     TableModule,
@@ -49,6 +57,8 @@ import { PropertyService } from './services/property.service';
     RouterModule,
     TextFieldComponent,
     AutocompleteFieldComponent,
+    ReactiveFormsModule
+
   ]
 })
 export class SharedModule { }
