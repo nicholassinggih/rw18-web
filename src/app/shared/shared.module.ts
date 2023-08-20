@@ -18,6 +18,7 @@ import { ContainerComponent } from './container/container.component';
 import { AutocompleteFieldComponent } from './field/autocomplete-field/autocomplete-field.component';
 import { BaseFieldComponent } from './field/base-field/base-field.component';
 import { TextFieldComponent } from './field/text-field/text-field.component';
+import { PaymentListComponent } from './payment-list/payment-list.component';
 import { AccountService } from './services/account.service';
 import { PaymentService } from './services/payment.service';
 import { PropertyService } from './services/property.service';
@@ -28,7 +29,8 @@ import { PropertyService } from './services/property.service';
     ContainerComponent,
     TextFieldComponent,
     AutocompleteFieldComponent,
-    BaseFieldComponent
+    BaseFieldComponent,
+    PaymentListComponent
   ],
   imports: [
     CommonModule,
@@ -64,6 +66,7 @@ import { PropertyService } from './services/property.service';
     TableModule,
     ButtonModule,
     PaginatorModule,
+    PaymentListComponent,
     RouterModule,
     TextFieldComponent,
     AutocompleteFieldComponent,
