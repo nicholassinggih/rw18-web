@@ -16,6 +16,7 @@ import { AutocompleteFieldComponent } from './field/autocomplete-field/autocompl
 import { BaseFieldComponent } from './field/base-field/base-field.component';
 import { TextFieldComponent } from './field/text-field/text-field.component';
 import { AccountService } from './services/account.service';
+import { PaymentService } from './services/payment.service';
 import { PropertyService } from './services/property.service';
 
 @NgModule({
@@ -42,7 +43,8 @@ import { PropertyService } from './services/property.service';
   ],
   providers: [
     AccountService,
-    PropertyService
+    PropertyService,
+    PaymentService
   ],
   exports: [
     FormsModule,
