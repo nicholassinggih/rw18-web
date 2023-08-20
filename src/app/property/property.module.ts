@@ -5,6 +5,7 @@ import { PropertyDetailComponent } from './property-detail/property-detail.compo
 import { PropertyListComponent } from './property-list/property-list.component';
 import { PropertyRoutingModule } from './property-routing.module';
 import { PropertyBillComponent } from './property-bill/property-bill.component';
+import { AddPaymentComponent } from './add-payment/add-payment.component';
 
 
 
@@ -12,7 +13,8 @@ import { PropertyBillComponent } from './property-bill/property-bill.component';
   declarations: [
     PropertyDetailComponent,
     PropertyListComponent,
-    PropertyBillComponent
+    PropertyBillComponent,
+    AddPaymentComponent
   ],
   imports: [
     PropertyRoutingModule,

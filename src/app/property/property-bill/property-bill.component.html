@@ -10,6 +10,8 @@
   <div>{{ account?.balance }}</div>
 </div>
 
+<p-button label="Add Payment" icon="pi pi-dollar" (onClick)="addPayment()"></p-button>
+
 <p-selectButton
   (onChange)="getBills()"
   [options]="paidFilterOptions"
