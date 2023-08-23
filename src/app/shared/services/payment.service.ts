@@ -9,6 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 export class PaymentService {
 
+  getPaymentList(accountId: string, keyword: string, offset: number, limit: number) {
+    let url = `${environment.apiUrl}/payment/search`;
+    return this.http.get<any>(url, {params: { accountId, keyword, offset, limit }});
+  }
+
   constructor(
     private http: HttpClient
   ) { }
