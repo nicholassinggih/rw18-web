@@ -25,7 +25,7 @@ export class PropertyListComponent {
     console.log(event);
     this.offset = offset;
     this.pageSize = limit;
-    this.propSvc.searchProperty(keyword, this.offset, this.pageSize).subscribe(res => {
+    this.propSvc.searchProperty(keyword, offset, limit).subscribe(res => {
       console.log(res);
       this.propertyList = res.rows;
       this.totalRecords = res.count;
