@@ -9,6 +9,9 @@
       [useGrouping]="false"
       inputId="accountId" mode="decimal"> </p-inputNumber>
 
+    <label for="paymentDate">Date:</label>
+    <p-calendar formControlName="paymentDate" [showIcon]="true"></p-calendar>
+
     <label for="amount">Amount:</label>
     <p-inputNumber formControlName="amount" inputId="amount" mode="decimal"
       [max]="9999999999"

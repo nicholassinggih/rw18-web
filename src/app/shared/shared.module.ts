@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -33,6 +34,7 @@ import { PropertyService } from './services/property.service';
     PaymentListComponent
   ],
   imports: [
+    CalendarModule,
     CommonModule,
     ButtonModule,
     InputTextModule,
@@ -56,6 +58,7 @@ import { PropertyService } from './services/property.service';
     MessageService
   ],
   exports: [
+    CalendarModule,
     FormsModule,
     InputTextModule,
     InputNumberModule,
