@@ -31,17 +31,15 @@ export class AccountService {
 
 
   getBills(accountId: number, paidFilter: PaidFilter): Observable<any> {
-    let billPaid = undefined;
-    switch(paidFilter) {
-      case PaidFilter.PAID: billPaid = 1; break;
-      case PaidFilter.UNPAID: billPaid = 0; break;
-    }
-
-    let url = `${environment.apiUrl}/bill/search`;
-    return this.http.get<any>(url, {params: {
+    let params = {
       accountId: accountId || '',
-      paid: billPaid
-    }});
+      paid: paidFilter === PaidFilter.PAID? 1 : 0
+    };
+    if (paidFilter !== PaidFilter.PAID && paidFilter !== PaidFilter.UNPAID) {
+      delete params.paid;
+    }
+    let url = `${environment.apiUrl}/bill/search`;
+    return this.http.get<any>(url, { params });
   }
 
 }
