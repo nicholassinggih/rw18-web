@@ -17,6 +17,7 @@ export class AddPaymentComponent {
   accountId: string;
   account: Account = null;
   form: FormGroup;
+  defaultValues: any;
 
   constructor(
     private accountService: AccountService,
@@ -28,20 +29,23 @@ export class AddPaymentComponent {
   ) { }
 
   createForm(): void {
-    this.form = this.fb.group({
-      accountId: [{ value: this.accountId, disabled: true}],
+    this.defaultValues = {
+      accountId: this.accountId,
+      paymentDate: new Date(),
       amount: 0,
       fromName: '',
       fromBank: '',
       fromAccountNo: '',
       notes: '',
-    });
+    };
+    this.form = this.fb.group(this.defaultValues);
+    this.form.get('accountId').disable();
   }
 
   submitForm(): void {
     this.paymentService.savePayment({ accountId: this.accountId, ...this.form.value }).subscribe({
       next: (v) => {
-        this.form.reset();
+        this.form.reset(this.defaultValues);
         this.messageService.add({
           severity: 'success',
           summary: 'Success',

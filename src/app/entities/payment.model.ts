@@ -8,4 +8,5 @@ export class Payment {
   fromBank: string;
   notes: string;
   phonetic: string;
+  paymentDate: Date;
 }
