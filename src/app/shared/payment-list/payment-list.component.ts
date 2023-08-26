@@ -19,9 +19,12 @@ export class PaymentListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.search(this.accountId, this.keyword, this.offset, this.pageSize);
+    this.refresh();
   }
 
+  refresh(): void {
+    this.search(this.accountId, this.keyword, this.offset, this.pageSize);
+  }
 
   search(accountId: string, keyword: string, offset: number, limit: number): void{
     this.offset = offset;
