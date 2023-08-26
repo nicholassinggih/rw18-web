@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Account } from 'src/app/entities/account.model';
+import { PaymentListComponent } from 'src/app/shared/payment-list/payment-list.component';
 import { AccountService } from 'src/app/shared/services/account.service';
 import { PaymentService } from 'src/app/shared/services/payment.service';
 
@@ -18,6 +19,8 @@ export class AddPaymentComponent {
   account: Account = null;
   form: FormGroup;
   defaultValues: any;
+
+  @ViewChild(PaymentListComponent) paymentList: PaymentListComponent;
 
   constructor(
     private accountService: AccountService,
@@ -50,7 +53,8 @@ export class AddPaymentComponent {
           severity: 'success',
           summary: 'Success',
           detail: 'Payment has been successfully added!'
-        })
+        });
+        this.paymentList.refresh();
       },
       error: (err) => {
         this.messageService.add({
