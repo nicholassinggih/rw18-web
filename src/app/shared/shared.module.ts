@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -53,6 +53,7 @@ import { PropertyService } from './services/property.service';
   ],
   providers: [
     AccountService,
+    DatePipe,
     PropertyService,
     PaymentService,
     MessageService

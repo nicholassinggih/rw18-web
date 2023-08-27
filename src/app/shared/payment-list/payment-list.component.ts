@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { PaymentService } from '../services/payment.service';
 
@@ -16,6 +17,7 @@ export class PaymentListComponent implements OnInit {
 
   constructor(
     private paymentService: PaymentService,
+    private datePipe: DatePipe,
   ) {}
 
   ngOnInit(): void {
