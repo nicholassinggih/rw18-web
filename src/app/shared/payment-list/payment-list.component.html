@@ -21,12 +21,12 @@
   </ng-template>
   <ng-template pTemplate="body" let-payment>
       <tr>
-          <td>{{ payment.paymentDate }}</td>
-          <td>{{ payment.fromName }}</td>
-          <td>{{ payment.fromAccountNo }}</td>
-          <td>{{ payment.fromBank }}</td>
+          <td>{{ payment.paymentDate | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+          <td>{{ payment.fromName || '-' }}</td>
+          <td>{{ payment.fromAccountNo || '-' }}</td>
+          <td>{{ payment.fromBank || '-' }}</td>
           <td>{{ payment.amount }}</td>
-          <td>{{ payment.notes }}</td>
+          <td>{{ payment.notes || '-' }}</td>
           <td>
             <!-- <p-button icon="pi pi-eye" (onClick)="viewDetail(payment.id)" styleClass="p-button-rounded p-button-help"></p-button>
             <p-button icon="pi pi-pencil" (onClick)="editpayment(payment.id)" styleClass="p-button-rounded p-button-danger"></p-button>
